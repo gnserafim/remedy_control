@@ -1,3 +1,4 @@
+import json
 import streamlit as st
 import pandas as pd
 from googleapiclient.discovery import build
@@ -10,7 +11,7 @@ SCOPES = ['https://www.googleapis.com/auth/drive']
 PARENT_FOLDER_ID = "1yVLvSlfA830BjWOfCT_OxQguRe1Qj1dD"
 file_id = '1ZtQB7aJ4Z_0ocg1n9azUM7C3XV-RYoMC'
 
-SERVICE_ACCOUNT_FILE = {
+SERVICE_ACCOUNT_FILE_DICT = {
   "type": st.secrets["type"],
   "project_id": st.secrets["project_id"],
   "private_key_id": st.secrets["private_key_id"],
@@ -23,6 +24,7 @@ SERVICE_ACCOUNT_FILE = {
   "client_x509_cert_url": st.secrets["client_x509_cert_url"],
   "universe_domain": st.secrets["universe_domain"]
 }
+SERVICE_ACCOUNT_FILE = json.dumps(SERVICE_ACCOUNT_FILE_DICT)
 
 def authenticate():
     creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
