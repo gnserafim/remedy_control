@@ -31,7 +31,7 @@ st.write(type(SERVICE_ACCOUNT_FILE))
 st.write(SERVICE_ACCOUNT_FILE)
 
 def authenticate():
-    creds = service_account.Credentials.from_service_account_file(SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    creds = service_account.Credentials.from_service_account_info(SERVICE_ACCOUNT_FILE, scopes=SCOPES) ###  from_service_account_file
     return creds
 
 def update_file(file_path):
