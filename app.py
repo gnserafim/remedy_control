@@ -6,7 +6,6 @@ from googleapiclient.discovery import build
 from google.oauth2 import service_account
 from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 
-url = 'https://drive.google.com/uc?id=' + 'https://drive.google.com/file/d/1ZtQB7aJ4Z_0ocg1n9azUM7C3XV-RYoMC/view?usp=drive_link'.split('/')[-2]
 SCOPES = ['https://www.googleapis.com/auth/drive']
 SERVICE_ACCOUNT_FILE = st.secrets['SERVICE_ACCOUNT_FILE']
 PARENT_FOLDER_ID = "1yVLvSlfA830BjWOfCT_OxQguRe1Qj1dD"
